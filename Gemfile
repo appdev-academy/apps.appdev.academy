@@ -10,6 +10,13 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 
+# Admin panel
+gem 'activeadmin'
+gem 'activeadmin_addons'
+
+# User authentication
+gem 'devise'
+
 # Fetch ENV variables from config/application.yml file
 gem 'figaro'
 
@@ -34,6 +41,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

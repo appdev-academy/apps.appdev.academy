@@ -4,7 +4,8 @@ class CreateDocumentVersions < ActiveRecord::Migration[6.0]
       t.bigint :app_id, null: false
       t.bigint :document_id, null: false
       t.integer :version, null: false
-      t.datetime :published_at
+      t.date :revision_date, null: false
+      t.boolean :published
       t.timestamps
       
       t.index [:app_id, :document_id, :version], unique: true
