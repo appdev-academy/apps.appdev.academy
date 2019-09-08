@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_09_08_200529) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "apps", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_apps_on_slug", unique: true
+    t.index ["title"], name: "index_apps_on_title", unique: true
+  end
+
+  create_table "document_versions", force: :cascade do |t|
+    t.bigint "app_id", null: false
+    t.bigint "document_id", null: false
+    t.integer "version", null: false
+    t.datetime "published_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id", "document_id", "version"], name: "index_document_versions_on_app_id_and_document_id_and_version", unique: true
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "slug", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["slug"], name: "index_documents_on_slug", unique: true
+    t.index ["title"], name: "index_documents_on_title", unique: true
+  end
 
 end
