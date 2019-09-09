@@ -1,0 +1,9 @@
+.row
+  .col
+    - if @document_version
+      h2 = @document_version.document.title
+      p Last updated on #{@document_version.revision_date.strftime('%B %d, %Y')}
+      .content
+        = @document_version.content.html_safe
+    - else
+      h4 No document found
