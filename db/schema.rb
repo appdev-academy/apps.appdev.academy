@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_201929) do
+ActiveRecord::Schema.define(version: 2019_09_09_000341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_201929) do
     t.boolean "published"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content", null: false
     t.index ["app_id", "document_id", "version"], name: "index_document_versions_on_app_id_and_document_id_and_version", unique: true
   end
 

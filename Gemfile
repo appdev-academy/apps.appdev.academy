@@ -14,7 +14,10 @@ gem 'puma', '~> 3.11'
 gem 'activeadmin'
 gem 'activeadmin_addons'
 
-# User authentication
+# Rich text editor for ActiveAdmin
+gem 'activeadmin_quill_editor'
+
+# AdminUser authentication for ActiveAdmin
 gem 'devise'
 
 # Fetch ENV variables from config/application.yml file
