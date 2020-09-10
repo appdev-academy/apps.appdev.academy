@@ -6,13 +6,13 @@ default: &default
   password: <%= ENV['RDS_PASSWORD'] %>
   host: <%= ENV['RDS_HOSTNAME'] %>
   port: <%= ENV['RDS_PORT'] %>
-  pool: <%= ENV['RDS_DB_POOL'] || 5 %>
+  pool: <%= ENV['RDS_POOL'] || { 5 } %>
+  
+production:
+  <<: *default
   
 development:
   <<: *default
   
 test:
-  <<: *default
-  
-production:
   <<: *default
