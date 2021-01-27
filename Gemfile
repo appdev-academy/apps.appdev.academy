@@ -16,6 +16,8 @@ gem 'slim-rails'
 # Admin panel
 gem 'activeadmin'
 gem 'activeadmin_addons'
+# TODO: Remove this one after dependency for ActiveAdmin updates and formtastic 4.0.0+ is released
+gem 'formtastic', '4.0.0.rc1'
 
 # Rich text editor for ActiveAdmin
 gem 'activeadmin_quill_editor'
